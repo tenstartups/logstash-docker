@@ -1,5 +1,4 @@
 # Logstash Docker Image
-==
 
 Example Dockerfile for Logstash, with journald input. Docker image hosted at
 [tenstartups/logstash-docker](https://registry.hub.docker.com/u/tenstartups/logstash).
