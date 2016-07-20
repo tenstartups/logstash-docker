@@ -8,5 +8,8 @@ FROM logstash:latest
 
 MAINTAINER Marc Lennox <marc.lennox@gmail.com>
 
-# Install additional plugins.
+# Install required operating system packages.
+RUN apt-get update && apt-get -y install libsystemd-dev
+
+# Install additional logstash plugins.
 RUN logstash-plugin install logstash-input-journald
