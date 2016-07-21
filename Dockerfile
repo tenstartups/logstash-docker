@@ -11,5 +11,8 @@ MAINTAINER Marc Lennox <marc.lennox@gmail.com>
 # Install required operating system packages.
 RUN apt-get update && apt-get -y install libsystemd-dev
 
+# Remove default data directory
+RUN rm -rf /var/lib/logstash
+
 # Install additional logstash plugins.
 RUN logstash-plugin install logstash-input-journald
