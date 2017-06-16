@@ -4,7 +4,7 @@
 # http://github.com/tenstartups/logstash-docker
 #
 
-FROM logstash:2
+FROM docker.elastic.co/logstash/logstash:5.4.1
 
 MAINTAINER Marc Lennox <marc.lennox@gmail.com>
 
