@@ -12,5 +12,4 @@ MAINTAINER Marc Lennox <marc.lennox@gmail.com>
 COPY entrypoint.sh /docker-entrypoint.sh
 
 # Install additional logstash plugins.
-RUN logstash-plugin uninstall x-pack
 RUN logstash-plugin install logstash-input-journald
