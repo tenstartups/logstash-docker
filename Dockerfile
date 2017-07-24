@@ -8,8 +8,19 @@ FROM docker.elastic.co/logstash/logstash:5.5.0
 
 MAINTAINER Marc Lennox <marc.lennox@gmail.com>
 
-# Copy files into place.
-COPY entrypoint.sh /docker-entrypoint.sh
+USER root
+
+# Install packages.
+RUN \
+  yum install -y ruby git
 
 # Install additional logstash plugins.
-RUN logstash-plugin install logstash-input-journald
+RUN \
+  cd tmp && \
+  git clone https://github.com/logstash-plugins/logstash-input-journald.git && \
+  cd logstash-input-journald && \
+  gem build logstash-input-journald.gemspec && \
+  logstash-plugin install ./logstash-input-journald-*.gem
+
+# Copy files into place.
+COPY entrypoint.sh /docker-entrypoint.sh
