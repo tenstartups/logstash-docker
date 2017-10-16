@@ -16,7 +16,7 @@ RUN \
 
 # Install additional logstash plugins.
 RUN \
-  cd tmp && \
+  cd /tmp && \
   git clone https://github.com/logstash-plugins/logstash-input-journald.git && \
   cd logstash-input-journald && \
   gem build logstash-input-journald.gemspec && \
