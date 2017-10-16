@@ -4,9 +4,9 @@
 # http://github.com/tenstartups/logstash-docker
 #
 
-FROM docker.elastic.co/logstash/logstash:5.6.2
+FROM docker.elastic.co/logstash/logstash:5.6.3
 
-MAINTAINER Marc Lennox <marc.lennox@gmail.com>
+LABEL maintainer="Marc Lennox <marc.lennox@gmail.com>"
 
 USER root
 
